@@ -1,0 +1,24 @@
+﻿@model CommentAndReview.Models.Comment
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>WELCOME to Comment and Review Webpage</h2>*@
+
+<h3>Please input a video url in the text box below</h3>
+
+@using (Html.BeginForm("GetYoutubeReviews", "GetReviews")) 
+{
+    @Html.ValidationSummary(true, "Please fill the box")
+<div class="form-group">
+    @Html.LabelFor(m => m.Submit) 
+    @Html.TextBoxFor(m => m.Submit, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Submit)
+    @*form-control above reps a class that is defined in bootstrap that gives our form a good look and feel*@
+</div>
+    <button type="submit" class="btn btn-secondary btn-lg">GetYoutubeID</button>
+}
+
+
+
